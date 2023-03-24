@@ -13,7 +13,7 @@ pipeline {
         stage('code scanner') {
             steps {
                 withSonarQubeEnv(credentialsId: 'sonar_key',installationName:'sonarqube') {
-                    sh 'mvn sonar:sonar'
+                    sh 'sonar:sonar'
     
                }
             
