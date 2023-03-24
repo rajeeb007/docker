@@ -10,15 +10,7 @@ pipeline {
                 git branch: 'main', credentialsId: 'raji_git', url: 'https://github.com/rajeeb007/docker.git'
             }
         }
-        stage('code scanner') {
-            steps {
-                withSonarQubeEnv(credentialsId: 'sonar_key',installationName:'sonarqube') {
-                    sh 'sonar:sonar'
-    
-               }
-            
-            }
-        }
+        
         stage('docker image building') {
 
             steps {
